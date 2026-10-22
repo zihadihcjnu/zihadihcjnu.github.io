@@ -26,6 +26,53 @@ section{padding:72px 0}.section-head{max-width:720px;margin-bottom:30px}.kicker{
 [lang="bn"] .hero h1{letter-spacing:0} .bn{display:none}body.show-bn .en{display:none}body.show-bn .bn{display:block}body.show-bn nav .en{display:none}body.show-bn nav .bn{display:inline}
 @media(max-width:800px){.hero-grid,.about-grid,.two-col,.contact-grid{grid-template-columns:1fr}.hero{padding:58px 0}.hero-card{max-width:360px}.cards{grid-template-columns:repeat(2,1fr)}nav{gap:10px}.navinner{padding:12px 0;align-items:flex-start;flex-direction:column}.hero h1{letter-spacing:-1px}}
 @media(max-width:520px){.cards{grid-template-columns:1fr}section{padding:52px 0}.hero h1{font-size:2.8rem}.actions .btn{width:100%;text-align:center}}
+/* Fix profile photo and mobile hero layout */
+.profile-photo {
+  display: block;
+  width: 150px;
+  height: 150px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  border: 4px solid #e3b34f;
+}
+
+/* Keep the profile card within the screen */
+.hero-card {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero-card img {
+  max-width: 100%;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px;
+  }
+
+  .hero-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-card .profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+}
 </style>
 </head>
 <body>
